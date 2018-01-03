@@ -25,14 +25,6 @@ To customise your ENSIME Emacs experience, don't forget to read through the user
 | `C-c C-c c` | Re-typecheck the current file |
 | `C-c C-c r` | Restart the presentation compiler for all open files |
 
-
-## Testing
-
-| Shortcut    | Description |
-|-------------|-------------|
-| `C-c C-t t` | Go to (or create) test for current class |
-| `C-c C-t i` | Go to implementation of the current test |
-
 ## Refactoring
 
 | Shortcut    | Description |
