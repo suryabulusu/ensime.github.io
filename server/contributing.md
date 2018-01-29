@@ -100,7 +100,7 @@ Because we are at the forefront of the development cycle for new versions of Sca
 To build your own server jar:
 
 ```
-sbt ++2.10.6 ensime/assembly # replace with your version of scala
+sbt ++2.10.6 ensime-server/assembly # replace with your version of scala
 ```
 
 **check that again**: Make sure the Scala major version matches the Scala major version of the project in which you wish to use the ensime-server snapshot build.
