@@ -20,6 +20,7 @@ Some useful resources to learn Emacs:
 - [Mastering Emacs](https://www.masteringemacs.org/)
 - [GNU Emacs Reference Card (pdf)](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf)
 - [Sacha's .emacs.d](http://pages.sachachua.com/.emacs.d/Sacha.html)
+- [XahLee's ergoemacs](http://ergoemacs.org/)
 
 The use of [EmacsWiki](http://www.emacswiki.org/) is discouraged as much of the content is out of date.
 
