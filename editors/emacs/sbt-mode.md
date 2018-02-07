@@ -48,6 +48,19 @@ To work efficiently with `sbt-mode`, you may wish to customise your workflow wit
 - locally bind a key to `comint-accumulate`
 - locally bind a key to `next-error`
 
+A more daring customisation is to use `prettify-symbols-mode` to replace long repetitive strings with symbols. For example
+
+```elisp
+(add-hook 'sbt-mode-hook
+          (lambda ()
+            (setq prettify-symbols-alist
+                  `((,(expand-file-name (directory-file-name default-directory)) . ?⌂)
+                    (,(expand-file-name "~") . ?~)))
+            (prettify-symbols-mode t)))
+```
+
+will replace occurrences of the project's root directory with the UTF-8 symbol for "house" and any long-form occurrences of your home directory with tilde.
+
 ## Tasks
 
 ### Searching
