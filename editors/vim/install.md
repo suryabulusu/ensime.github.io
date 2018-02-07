@@ -19,19 +19,21 @@ If you're using Ubuntu, as of 16.04, default Vim doesn't have Python configured.
    $ pip install neovim
    ```
 
-1. If you're using Neovim with [Nix][nix] you will need to override the default derivation to include
-   `websocket-client` and `sexpdata` since Nix-installed Neovim will not look in standard locations for Python packages.
-   One of your options for doing this is through [`packageOverrides`][nixPackageOverrides].
+1. If you're using Neovim with [Nix][nix] you'll need to override the package to ensure that the Python
+   interpreter uses the `websocket-client` and `sexpdata` modules.
+   This can be achieved easily using [`overlays`][nixOverlays]:
 
-   ```
+   ``` nix
+   self: super:
+
    {
-     packageOverrides = pkgs: rec {
-       neovim = with pkgs; neovim.override { extraPythonPackages = with pythonPackages; [ websocket_client sexpdata ]; };
+     neovim = self.neovim.override {
+       extraPythonPackages = with self.pythonPackages; [ websocket_client sexpdata ];
      };
    }
    ```
 
-   Once it's overridden make sure to re-install Neovim.
+   Make sure to rebuild Neovim after that.
 
 1. Install the ENSIME plugin for your [build tool](/build_tools)
 1. Add ensime-vim to your plugin manager of choice in your `.vimrc` (or `init.vim` for Neovim):
@@ -73,5 +75,5 @@ Depending on your preferences, you may want to add some of the following to your
 [Syntastic]: https://github.com/scrooloose/syntastic
 [webbrowser module]: https://docs.python.org/2/library/webbrowser.html
 [browser-script]: https://github.com/ensime/ensime-vim/pull/226#issuecomment-207468659
-[nix]: https://nixos.org/nixpkgs/manual/#sec-modify-via-packageOverrides
-[nixPackageOverrides]: https://nixos.org/nixpkgs/manual/#sec-modify-via-packageOverrides
+[nix]: https://nixos.org/nix
+[nixOverlays]: https://nixos.org/nixpkgs/manual/#chap-overlays
