@@ -39,7 +39,7 @@ If a volunteer would like to pad out the following, that'd be great. Until then,
 
 Only when you have been able to write simple puzzles should you start ensime server, for now read [Getting Started](/getting_started).
 
-Bare in mind that there are several components (for Emacs with sbt) that go beyond just Scala the language:
+Bear in mind that there are several components (for Emacs with sbt) that go beyond just Scala the language:
 
 - Emacs itself for common text editing and project management
 - sbt the build tool for downloading your deps and building / running your app and tests
