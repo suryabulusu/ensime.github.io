@@ -18,6 +18,7 @@ We are also experimenting with workarounds to the specific problem of complex im
 ## Freezing Up
 
 1. check if you're running out of RAM, if so try the workarounds documented in ([#1756](https://github.com/ensime/ensime-server/issues/1756))
+2. ensime 2.0 introduced performance regressions, the indexer needs a rewrite [#1902](https://github.com/ensime/ensime-server/issues/1902). We need a contributor to dedicate some serious time to fix this.
 
 ## Anything else
 
