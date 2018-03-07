@@ -10,3 +10,5 @@ If you are new to Emacs in general, we maintain some [Learning Emacs](/editors/e
 resources to get you started.
 
 If you are already competent with Emacs, head straight over to the [Installing](/editors/emacs/install) guide.
+
+If you've already installed and configured Ensime for Emacs, browse the [user guide](http://ensime.github.io/editors/emacs/userguide/).
