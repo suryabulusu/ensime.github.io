@@ -12,8 +12,7 @@ Most tickets can be resolved easily by following a simple process.
 
 0. Fully compile your project.
 1. Nuke old versions of the ENSIME server.
-   - `rm -rf ~/.ivy2/cache/org.ensime`
-   - `rm -rf ~/.ivy2/local/org.ensime`
+   - `rm -rf ~/.coursier/cache/v1/https/oss.sonatype.org/content/repositories/snapshots/org/ensime/`
 2. Use the latest release of `ensime` for Vim (i.e. update `ensime-vim` via your favorite package manager).
 3. Sometimes we update the command interface for the plugin. This can break Neovim, so run `:UpdateRemotePlugins` and restart nvim.
 3. Check the [tickets flagged as FAQ for Vim](https://github.com/ensime/ensime-vim/issues?labels=FAQ).
