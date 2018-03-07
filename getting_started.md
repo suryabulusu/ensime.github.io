@@ -15,7 +15,8 @@ ENSIME is not an IDE, it is just one tool in a toolbox. You must also have:
 1. a `.ensime` file describing your project layout. To generate this file, see [our list of build tool plugins](/build_tools/).
 1. a text editor. See [our list of editor plugins](/editors/).
 
-The build tool plugin downloads the `ensime-server` and your text editor launches it. Read the [server documentation](/server) to further customise your experience.
+The build tool plugin downloads the `ensime-server` and your text editor launches it. There's no separate "Download" page.
+Read the [server documentation](/server) to further customise your experience.
 
 ## Getting Help
 
