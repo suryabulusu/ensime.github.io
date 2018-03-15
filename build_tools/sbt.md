@@ -21,7 +21,7 @@ Therefore it is recommended to install it as a [global plugin](http://www.scala-
 To do so, add it to `~/.sbt/1.0/plugins/plugins.sbt` (create if necessary) as such:
 
 ```scala
-addSbtPlugin("org.ensime" % "sbt-ensime" % "2.1.0")
+addSbtPlugin("org.ensime" % "sbt-ensime" % "2.3.0")
 ```
 
 Then in order to create the `.ensime` file for you project, start `sbt` (in the terminal or your editor's `sbt` mode) and run the `ensimeConfig` command.
@@ -199,16 +199,16 @@ Emacs users should recall that in order to send a control sequence to the `sbt-m
 
 ### sbt Version
 
-Your `project/build.properties` needs to use a version newer than 0.13.5 of sbt due to a [breaking AutoPlugin change](https://github.com/ensime/ensime-server/issues/672), e.g.
+Your `project/build.properties` needs to use, at least, a recent version of 0.13.x
 
 ```
-sbt.version=0.13.16
+sbt.version=0.13.17
 ```
 
-or even 
+or
 
 ```
-sbt.version=1.0.2
+sbt.version=1.1.1
 ```
 
 ## Contributing
