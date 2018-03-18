@@ -23,7 +23,7 @@ proven false: we tried and it didn't work.
 
 I am the biggest contributor to ENSIME, having taken over from the original
 author, Aemon Cannon, [in
-2014](https://github.com/ensime/ensime-server/graphs/contributors?type=a). I
+2014](https://github.com/ensime/ensime-server/graphs/contributors?type`a). I
 thought the LSP-WG would appreciate my opinions on how to build a Language
 Server, address some misconceptions, and point out areas where I feel efforts
 would be best focused. The BTP-WG should also be aware of some of the components
@@ -152,7 +152,7 @@ generally useful for developers using text editors and I recommend that they be
 adopted by sbt core:
 
 - `ensimeRunMain` an alternative to `runMain` allowing environment variables and
-  jvm arguments to be used, e.g. `a/ensimeRunMain FOO=BAR -Xmx2g foo.Bar baz`.
+  jvm arguments to be used, e.g. `a/ensimeRunMain FOO`BAR -Xmx2g foo.Bar baz`.
 - `c/ensimeLaunch MyApp` a launch manager that lets you define canned
   `ensimeRunMain` applications (analogous to IntelliJ's "Run Configurations")
 - `b/ensimeCompileOnly` Compile a single fully-qualified `.scala` file using
@@ -322,8 +322,8 @@ We discussed the possibility of doing this with the ScalaIDE team but it was
 never considered a priority by those who fund the ScalaIDE so it was never
 implemented.
 
-The ENSIME analyser uses the technique of loading binaries /of the current
-subproject/ into the presentation compiler, allowing it to support huge projects
+The ENSIME analyser uses the technique of loading binaries *of the current
+subproject* into the presentation compiler, allowing it to support huge projects
 and only load the files the user has open. Any attempt to load more than the
 user's files into memory result simply do not scale. The PC can be restarted
 quickly when binaries change.
@@ -362,7 +362,7 @@ to allow annotation macros to be rewritten as compiler plugins
 https://gitlab.com/fommil/scalaz-deriving/blob/master/deriving-plugin/src/main/scala/scalaz/plugins/deriving/AnnotationPlugin.scala
 this is much better behaved than annotation macros, but it does not support
 annotations by their FQN. I recommend that a phase be added to the compiler that
-names annotations, or to improve my =AnnotationPlugin.scala= to add support for
+names annotations, or to improve my `AnnotationPlugin.scala` to add support for
 naming of expected annotations (ignoring shadowing by annotations of the same
 name).
 
@@ -415,11 +415,11 @@ or native code is techdebt and the Java 7 API has been sufficient for our users.
 
 Testing was the focus for me and Rory when we took over from Aemon. The biggest
 code quality weakness of ENSIME is its lack of unit tests, which we can
-attribute to the use of akka and =Future=, which do not lend themselves to unit
+attribute to the use of akka and `Future`, which do not lend themselves to unit
 testing.
 
 If I had time to rewrite ensime, I would use higher kinded types to abstract all
-the interfaces over an =F[_]= such that unit tests could be entirely pure and
+the interfaces over an `F[_]` such that unit tests could be entirely pure and
 predictable, and fast.
 
 However, we're in the situation where we need large integration tests on user
