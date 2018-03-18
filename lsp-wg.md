@@ -277,10 +277,9 @@ https://github.com/scalameta/scalameta/blob/master/semanticdb/metacp/src/main/sc
 but it is far from the persisted data required to implement the features that
 ensime provides. We could also imagine having scalameta trees to provide
 additional features for scala files, perhaps better position information for
-position information. And in the ideal situation, we could incorporate
-semanticdb files if the library author has published them. I am unaware of a
-Java equivalent of scalameta, but it would be very useful for enhanced Java
-support.
+symbol definitions. And in the ideal situation, we could incorporate semanticdb
+files if the library author has published them. I am unaware of a Java
+equivalent of scalameta, but it would be very useful for enhanced Java support.
 
 ### Source Resolving
 
