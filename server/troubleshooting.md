@@ -29,6 +29,8 @@ ensimeJavaFlags ++= {
 }
 ```
 
+followed by a `sbt ensimeClearCache`. Be sure to read the sbt plugin docs for other performance improvement tips.
+
 ## Anything else
 
 1. fully compile your project, ENSIME uses your binaries for indexing.

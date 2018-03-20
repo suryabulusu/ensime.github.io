@@ -70,6 +70,20 @@ Also bundled are extra workflow tasks, which are used by ENSIME clients:
 | `ensimeTestOnlyDebug` | `...debug` extension to `testOnly`. Has the same logic as `ensimeRunDebug` in regard of `ensimeRunMain`. See debugging example [below](#debugging-example).|
 {: .sbt-tasks}
 
+and the following are tasks that can be used to create an optimal multi-branch workflow (the server must not be running when using these tasks):
+
+| `ensimeServerIndex` | Starts the server to create / update the index and then exits. |
+| `ensimeClearCache` | Deletes the current server cache. |
+| `ensimeSnapshot` | Creates a snapshot of the `ensime-server`'s index that can be restored at a later date. |
+| `ensimeRestore` | Recover a previous snapshot of the server's index. |
+
+For example, the following is a good "start the week" workflow hack
+
+```
+alias ensime="ctags -Re . & sbt clean ';ensimeRestore ;ensimeConfig ;ensimeConfigProject' ensimeServerIndex"
+```
+
+which will mean that further ensime startups will not need to index the third party jars, and you can run `ensimeRestore` to get back to the exact state the server was in at this time.
 
 ### Launch Configurations
 
