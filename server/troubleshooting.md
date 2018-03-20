@@ -20,7 +20,7 @@ We are also experimenting with workarounds to the specific problem of complex im
 1. check if you're running out of RAM, if so try the workarounds documented in [#1756](https://github.com/ensime/ensime-server/issues/1756).
 2. ensime 2.0 introduced major performance regressions as the price for new features, the indexer needs a rewrite [#1902](https://github.com/ensime/ensime-server/issues/1902). We need a contributor to dedicate some serious time to fix this.
 
-If performance is more important to you than features such as reverse lookup and rename refactor across files, try disabling the reverse lookup index. e.g. for =sbt= builds add this to your =~/.sbt/1.0/global.sbt=
+If performance is more important to you than features such as reverse lookup and rename refactor across files, try disabling the reverse lookup index. e.g. for `sbt` builds add this to your `~/.sbt/1.0/global.sbt`
 
 ```scala
 ensimeJavaFlags ++= {
