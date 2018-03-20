@@ -17,8 +17,15 @@ We are also experimenting with workarounds to the specific problem of complex im
 
 ## Freezing Up
 
-1. check if you're running out of RAM, if so try the workarounds documented in ([#1756](https://github.com/ensime/ensime-server/issues/1756))
-2. ensime 2.0 introduced major performance regressions as the price for new features, the indexer needs a rewrite [#1902](https://github.com/ensime/ensime-server/issues/1902). We need a contributor to dedicate some serious time to fix this.
+1. check if you're running out of RAM, if so try the workarounds documented in [#1756](https://github.com/ensime/ensime-server/issues/1756).
+2. ensime 2.0 introduced major performance regressions as the price for new features, the indexer needs a rewrite [#1902](https://github.com/ensime/ensime-server/issues/1902). We need a contributor to dedicate some serious time to fix this. If performance is more important to you than reverse lookup, try the following workaround, this example using the sbt plugin:
+
+```scala
+ensimeJavaFlags ++= {
+  if (name.value == "ensime") Nil
+  else Seq("-Densime.index.no.reverse.lookups=true")
+}
+```
 
 ## Anything else
 
