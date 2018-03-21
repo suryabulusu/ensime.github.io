@@ -81,11 +81,6 @@ ENSIME completion is initiated automatically (via the `company-mode` backend) or
 
 ENSIME provides an `imenu`-compatible summary of your source file, accessible through `M-x imenu` and compatible viewers. We recommend [`popup-imenu`](https://github.com/ancane/popup-imenu) as it gives a visual overview of your file.
 
-### Source formatting
-
-ENSIME uses the Scalariform library to format Scala sources. Type `C-c C-v f` to format the current buffer. Your build tool should provide options to enable you to provide the exact formatting rules to use.
-
-
 ## Refactoring
 
 Refactoring is provided by the [github.com/scala-ide/scala-refactoring](https://github.com/scala-ide/scala-refactoring) library.
@@ -98,6 +93,8 @@ Place your cursor over the symbol you'd like to add the type and type `C-c C-r a
 
 Place your cursor over the symbol you'd like to rename. Type `C-c C-r r` and follow the minibuffer instructions.
 
+Note that you must enable the "find usages" feature in your build tool plugin for this to work across files.
+
 ### Organize imports
 
 Type `C-c C-r o` in a Scala source buffer. Follow the minibuffer instructions.
@@ -109,7 +106,6 @@ Select a region by setting the mark using `C-SPC` and then placing the point at 
 ### Inline local
 
 Place your cursor over the local val whose value you'd like to inline. Type `C-c C-r i` and follow the minibuffer instructions.
-
 
 ### Documentation browsing
 

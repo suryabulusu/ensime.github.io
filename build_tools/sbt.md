@@ -21,7 +21,7 @@ Therefore it is recommended to install it as a [global plugin](http://www.scala-
 To do so, add it to `~/.sbt/1.0/plugins/plugins.sbt` (create if necessary) as such:
 
 ```scala
-addSbtPlugin("org.ensime" % "sbt-ensime" % "2.3.0")
+addSbtPlugin("org.ensime" % "sbt-ensime" % "2.4.0")
 ```
 
 Then in order to create the `.ensime` file for you project, start `sbt` (in the terminal or your editor's `sbt` mode) and run the `ensimeConfig` command.
@@ -70,20 +70,20 @@ Also bundled are extra workflow tasks, which are used by ENSIME clients:
 | `ensimeTestOnlyDebug` | `...debug` extension to `testOnly`. Has the same logic as `ensimeRunDebug` in regard of `ensimeRunMain`. See debugging example [below](#debugging-example).|
 {: .sbt-tasks}
 
-and the following are tasks that can be used to create an optimal multi-branch workflow (the server must not be running when using these tasks):
+The following are tasks can be used to create an optimal workflow (the server must not be running when using these tasks):
 
 | `ensimeServerIndex` | Starts the server to create / update the index and then exits. |
 | `ensimeClearCache` | Deletes the current server cache. |
 | `ensimeSnapshot` | Creates a snapshot of the `ensime-server`'s index that can be restored at a later date. |
 | `ensimeRestore` | Recover a previous snapshot of the server's index. |
 
-For example, the following is a good "start the week" workflow hack
+For example, the following is a good "start the day" workflow hack while you go and get tea or coffee:
 
 ```
-alias ensime="ctags -Re . & sbt clean ';ensimeRestore ;ensimeConfig ;ensimeConfigProject' ensimeServerIndex"
+alias ensime="ctags -Re . & sbt clean ensimeConfig test:compile ensimeServerIndex"
 ```
 
-which will mean that further ensime startups will not need to index the third party jars, and you can run `ensimeRestore` to get back to the exact state the server was in at this time.
+sprinkling in an `ensimeRestore` if you regularly run `ensimeSnapshot`.
 
 ### Launch Configurations
 
@@ -108,7 +108,7 @@ An untracked `ensime.sbt` file is [advised](#customise) for this, assuming you h
 
 ### Debugging Example
 
-Ensime plugin has two helpful comands for debugging: `ensimeRunDebug` for applications and `ensimeTestOnlyDebug` for tests. 
+Ensime plugin has two helpful comands for debugging: `ensimeRunDebug` for applications and `ensimeTestOnlyDebug` for tests.
 
 ```
 > ensimeRunDebug foo.Bar
@@ -120,6 +120,13 @@ Ensime plugin has two helpful comands for debugging: `ensimeRunDebug` for applic
 For project-specific tailorings, you do not need to commit anything to your project. Simply create an `ensime.sbt` in your project's base directory (beside `build.sbt`). Don't forget to add it to your `~/.gitignore`.
 
 Think long and hard before adding any of these settings to your global `~/.sbt/0.13/global.sbt`. For example, if you were to set a global `ensimeScalaVersion`, it will break if you are working on sbt plugins, old projects or upgrade to the latest scala. When putting settings in your global configuration, you must `import org.ensime.EnsimeKeys._`
+
+The "Find Usages" server feature is disabled by default due to the performance cost. If you would like to enable it, use
+
+```scala
+ensimeServerFindUsages in ThisBuild := true
+```
+
 
 Here is an example that sets a specific memory size for the ensime server:
 
