@@ -218,12 +218,12 @@ user's machines.
 
 #### LSP
 
-The LSP is truly terrible. The value of the LSP lies in the fact that many
-editors will put common infrastructure in place to support common tasks such as
-completion. The amount of developer time that this saves is of the order of
-hours or days. Unfortunately there are many flavours of LSP and a significant
-amount of client side work is still required for any given language or server.
-Excuse me for not being the least bit excited about it.
+The value of the LSP lies in the fact that many editors will put common
+infrastructure in place to support common tasks such as completion.
+Unfortunately there are many flavours of LSP and a significant amount of client
+side work is still required for any given language or server. As an Emacs user,
+with a superior protocol already, who gets no benefit from a LSP (i.e. the
+actual protocol), excuse me for not being the least bit excited about it.
 
 ENSIME 3.0.0-SNAPSHOT implements the LSP on the server side, funded by the
 sponsorship programme in response to huge public interest. I recommend that the
@@ -356,6 +356,15 @@ reproductions, and for macro / compiler plugin authors to test their code inside
 the PC. Further effort into making it easier for users of the PC to write a
 failing test would be beneficial, as well as improvements to pcplod such as
 extracting semantic information at a location from the PC.
+
+I have raised some specific tickets that I feel would be beneficial for the
+LSP-WG to look at:
+
+- https://github.com/scala/bug/issues/10793
+- https://github.com/scala/bug/issues/10794
+- https://github.com/scala/bug/issues/10795
+- https://github.com/scala/bug/issues/10796
+- https://github.com/scala/bug/issues/10797
 
 As an alternative to annotation macros, I have started work on an abstract class
 to allow annotation macros to be rewritten as compiler plugins
