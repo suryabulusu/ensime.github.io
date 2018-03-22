@@ -127,10 +127,16 @@ The "Find Usages" server feature is disabled by default due to the performance c
 ensimeServerFindUsages in ThisBuild := true
 ```
 
-If you use the [`macro-paradise`](https://github.com/scalamacros/paradise) compiler plugin, it is also disabled by default because it tends to cause more harm than good. If you want to see what the world is like if it is enabled, try this (which is known to improve things when using [monocle](https://github.com/julien-truffaut/Monocle), but to break things when using [simulacrum](https://github.com/mpilquist/simulacrum). This is [an upstream bug](https://github.com/scalamacros/paradise/issues/105)).
+If you use the [`macro-paradise`](https://github.com/scalamacros/paradise) compiler plugin, it is also disabled by default because it tends to cause more harm than good. If you want to see what the world is like if it is enabled, for just your `foo` subproject, try this (which is known to improve things when using [monocle](https://github.com/julien-truffaut/Monocle), but to break things when using [simulacrum](https://github.com/mpilquist/simulacrum). This is [an upstream bug](https://github.com/scalamacros/paradise/issues/105)).
 
 ```scala
-ensimeScalacTransformer in ThisBuild := identity
+ensimeScalacTransformer in LocalProject("foo") := identity
+```
+
+or if your `foo` subproject has its own `build.sbt` then put the customisation in `foo/ensime.sbt`:
+
+```scala
+ensimeScalacTransformer := identity
 ```
 
 Here is an example that sets a specific memory size for the ensime server:
