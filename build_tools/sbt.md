@@ -21,7 +21,7 @@ Therefore it is recommended to install it as a [global plugin](http://www.scala-
 To do so, add it to `~/.sbt/1.0/plugins/plugins.sbt` (create if necessary) as such:
 
 ```scala
-addSbtPlugin("org.ensime" % "sbt-ensime" % "2.4.0")
+addSbtPlugin("org.ensime" % "sbt-ensime" % "2.5.1")
 ```
 
 Then in order to create the `.ensime` file for you project, start `sbt` (in the terminal or your editor's `sbt` mode) and run the `ensimeConfig` command.
@@ -125,18 +125,6 @@ The "Find Usages" server feature is disabled by default due to the performance c
 
 ```scala
 ensimeServerFindUsages in ThisBuild := true
-```
-
-If you use the [`macro-paradise`](https://github.com/scalamacros/paradise) compiler plugin, it is also disabled by default because it tends to cause more harm than good. If you want to see what the world is like if it is enabled, for just your `foo` subproject, try this (which is known to improve things when using [monocle](https://github.com/julien-truffaut/Monocle), but to break things when using [simulacrum](https://github.com/mpilquist/simulacrum). This is [an upstream bug](https://github.com/scalamacros/paradise/issues/105)).
-
-```scala
-ensimeScalacTransformer in LocalProject("foo") := identity
-```
-
-or if your `foo` subproject has its own `build.sbt` then put the customisation in `foo/ensime.sbt`:
-
-```scala
-ensimeScalacTransformer := identity
 ```
 
 Here is an example that sets a specific memory size for the ensime server:
