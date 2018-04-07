@@ -20,7 +20,8 @@ The presentation compiler supports regular blackbox macros but does not support 
 ## Freezing Up
 
 1. check if you're running out of RAM, if so try the workarounds documented in [#1756](https://github.com/ensime/ensime-server/issues/1756).
-2. ensime 2.0 introduced major performance regressions as the price for new features, the indexer needs a rewrite [#1902](https://github.com/ensime/ensime-server/issues/1902). We need a contributor to dedicate some serious time to fix this.
+2. if you enabled reverse lookups, this could be the cause
+3. see "Problem with red squiggly lines" above, as it has the same root cause.
 
 ## Anything else
 
