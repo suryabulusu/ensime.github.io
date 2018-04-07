@@ -458,5 +458,6 @@ In terms of how the LSP-WG could directly benefit ENSIME, I recommend:
   - file watcher
   - presentation compiler helpers
   - consolidate refactoring in scalafix
+  - generate semantic highlighting positions for a file
 - provide high powered CI machines for use by the tooling ecosystem
 - take over the ensime-lsp project and clients
