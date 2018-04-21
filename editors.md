@@ -57,8 +57,6 @@ The following chart describes how well ENSIME supports each editor:
 | Show documentation     | ✔                         | ✔                      | ✔                   |                     | ✔                         |
 | Rename symbol          | ✔                         |                        | ✔                   |                     | ✔                         |
 | Organise imports       | ✔                         | ✔                      | ✔                   |                     | ✔                         |
-| Debugging              | ✔                         |                        | Partial             |                     |                           |
-| Java Support: ENJIME   | ✔                         |                        |                     |                     |                           |
 | REPL                   | ✔                         |                        |                     |                     |                           |
 | sbt integration        | ✔                         |                        |                     | ✔                   |                           |
 | Find usages (opt in)   | ✔                         |                        |                     |                     | ✔              |

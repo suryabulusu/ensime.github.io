@@ -405,16 +405,6 @@ Don't forget to add all these wonderful packages to your scala mode! Here's a fu
             (scala-mode:goto-start-of-code)))
 ```
 
-
-## Java
-
-These are Emacs hacks that improve productivity in Java, if you are brave enough to try [ENJIME](https://github.com/ensime/ensime-server/issues/345).
-
-**TL;DR** enable `(ensime-mode)`
-
-TODO
-
-
 ## Emacs Lisp
 
 These are Emacs hacks that improve productivity in Emacs Lisp, e.g. when [contributing to `ensime-emacs`](/editors/emacs/contributing).
