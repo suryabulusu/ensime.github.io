@@ -19,15 +19,15 @@ The presentation compiler supports regular blackbox macros but does not support 
 
 ## Freezing Up
 
-1. check if you're running out of RAM, if so try the workarounds documented in [#1756](https://github.com/ensime/ensime-server/issues/1756).
-2. if you enabled reverse lookups, this could be the cause
-3. see "Problem with red squiggly lines" above, as it has the same root cause.
+1. Check if you're running out of RAM, if so try the workarounds documented in [#1756](https://github.com/ensime/ensime-server/issues/1756).
+2. If you enabled reverse lookups, this could be the cause. Note that earlier versions of ensime-sbt would generate project configurations with this enabled, by default.
+3. See "Problem with red squiggly lines" above, as it has the same root cause.
 
 ## Anything else
 
-1. ensure that your build tool and editor plugins are up to date.
-1. fully compile your project, ENSIME uses your binaries for indexing.
-1. check [all ENSIME FAQ issues](https://github.com/search?utf8=%E2%9C%93&q=user%3Aensime+is%3Aissue+label%3AFAQ&type=Issues&ref=searchresults) and do a quick search.
+1. Ensure that your build tool and editor plugins are up to date.
+1. Fully compile your project, ENSIME uses your binaries for indexing.
+1. Check [all ENSIME FAQ issues](https://github.com/search?utf8=%E2%9C%93&q=user%3Aensime+is%3Aissue+label%3AFAQ&type=Issues&ref=searchresults) and do a quick search.
 
 If that solved your problem, great! If not, try asking in the chat room for your text editor's plugin.
 
