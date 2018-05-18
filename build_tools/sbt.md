@@ -24,7 +24,7 @@ To do so, add it to `~/.sbt/1.0/plugins/plugins.sbt` (create if necessary) as su
 addSbtPlugin("org.ensime" % "sbt-ensime" % "2.5.1")
 ```
 
-Then in order to create the `.ensime` file for you project, start `sbt` (in the terminal or your editor's `sbt` mode) and run the `ensimeConfig` command.
+Then in order to create the `.ensime` file for your project, start `sbt` (in the terminal or your editor's `sbt` mode) and run the `ensimeConfig` command.
 
 ### Common Mistakes
 
